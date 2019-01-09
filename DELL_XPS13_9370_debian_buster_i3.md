@@ -1,5 +1,7 @@
 # debian buster on Dell XPS 13 9370 with i3 window manager
 
+https://i3wm.org/docs/userguide.html
+
 get debian installer iso (buster alpha 4)
 
 cp debian.iso /dev/sdb  
