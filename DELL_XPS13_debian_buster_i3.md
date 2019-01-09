@@ -19,7 +19,8 @@ disable UEFI secure boot BIOS option
 press F12 at boot time
 
 
-# wifi (https://linuxcommando.blogspot.com/2013/10/how-to-connect-to-wpawpa2-wifi-network.html)
+# wifi
+(https://linuxcommando.blogspot.com/2013/10/how-to-connect-to-wpawpa2-wifi-network.html)
 vi /etc/network/interfaces
 > auto wlp1s0
 > iface wlp1s0 inet dhcp
