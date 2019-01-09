@@ -14,10 +14,9 @@ cp firmware-atheros_20180825+dfsg-1_all.deb mnt
 sync
 umount mnt
 
-
+# boot from USB stick
 disable UEFI secure boot BIOS option
 press F12 at boot time
-
 
 # wifi
 (https://linuxcommando.blogspot.com/2013/10/how-to-connect-to-wpawpa2-wifi-network.html)
@@ -28,11 +27,15 @@ vi /etc/network/interfaces
 >     wpa-psk "mypassword"
 ifup wlp1s0
 ping orf.at
-apt update && apt install vim less tree ack locate xinit x11-xserver-utils i3 suckless-tools pulseaudio pulseaudio-utils
+apt update && apt install vim less tree ack locate xinit x11-xserver-utils x11-utils i3 suckless-tools pulseaudio pulseaudio-utils
 
 startx
 
 # keyboard function keys
 xev, pactl, xrandr, xmodmap -pke
 .i3/config/i3
+
+vi ~/.xinitrc
+[[ -f ~/.Xmodmap ]] && xmodmap ~/.Xmodmap
+
 
