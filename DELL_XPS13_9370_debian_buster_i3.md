@@ -40,17 +40,39 @@ nmtui
 
 startx
 
-# keyboard, function keys (sound, brightness)
-xev, pactl, xrandr, xmodmap -pke  
-.i3/config/i3
+# keyboard
 
-vi ~/.xinitrc  
-[[ -f ~/.Xmodmap ]] && xmodmap ~/.Xmodmap
+## function key lock
+
+by default F1-F12 work as multimedia keys, press F2 during boot and change these BIOS settings.
+
+```
+"POST Behavior" > "Fn Lock Options"
+( ) Lock Mode Disable/Standard
+(o) Lock Mode Enable/Secondary
+```
+
+## function keys (sound, brightness)
+
+tools: xev, pactl, xrandr, xmodmap -pke
+
+```
+vi .config/i3/config
+# xrandr --listmonitors // eDP-1
+bindsym XF86MonBrightnessUp exec xrandr --output eDP-1 --brightness 0.75
+bindsym XF86MonBrightnessDown exec xrandr --output eDP-1 --brightness 0.4
+bindsym $mod+XF86MonBrightnessUp exec xrandr --output eDP-1 --brightness 1.0
+bindsym $mod+XF86MonBrightnessDown exec xrandr --output eDP-1 --brightness 0.2
+
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
+```
+
 
 # mouse, enable tap to click
+
+tools: xinput
 
 vi ~/.config/i3/config
 
 exec xinput set-prop 10 279 1
-
-
