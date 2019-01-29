@@ -40,9 +40,17 @@ nmtui
 
 startx
 
-# keyboard function keys
+# keyboard, function keys (sound, brightness)
 xev, pactl, xrandr, xmodmap -pke  
 .i3/config/i3
 
 vi ~/.xinitrc  
 [[ -f ~/.Xmodmap ]] && xmodmap ~/.Xmodmap
+
+# mouse, enable tap to click
+
+vi ~/.config/i3/config
+
+exec xinput set-prop 10 279 1
+
+
