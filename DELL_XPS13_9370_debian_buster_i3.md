@@ -73,6 +73,10 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
 
 tools: xinput
 
+1) xinput // find ID of your touchpad (e.g. 10)   
+2) xinput list-props 10 | grep 'Tapping Enabled' // find event (e.g. 279)   
+3) xinput set-prop 10 279 1 // enable tap to click   
+
 vi ~/.config/i3/config
 
 exec xinput set-prop 10 279 1
