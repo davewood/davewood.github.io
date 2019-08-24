@@ -38,6 +38,8 @@ OR
 
 nmtui
 
+if wifi crashes restart `service network-manager restart`
+
 startx
 
 # keyboard
@@ -80,3 +82,8 @@ tools: xinput
 vi ~/.config/i3/config
 
 exec xinput set-prop 10 279 1
+
+# power management
+/etc/systemd/logind.conf
+
+HandleLidSwitch=ignore
